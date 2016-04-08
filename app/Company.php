@@ -10,11 +10,15 @@ class Company extends Model {
 
 
     public function admin() {
-        return $this->hasOne('Admin'); // this matches the Eloquent model
+        return $this->hasOne('App\Admin'); // this matches the Eloquent model
+    }
+
+    public function products(){
+        return $this->hasMany('App\Products');
     }
 
     public function categories() {
-        return $this->belongsToMany('App\Category', 'companies_products', 'company_id', 'category_id');
+        return $this->belongsToMany('App\Category', 'companies_categories', 'company_id', 'category_id');
     }
 
 
