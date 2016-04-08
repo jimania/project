@@ -1,5 +1,5 @@
 <?php
-
+use \App\Company;
 use \App\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
@@ -89,11 +89,13 @@ class CompanyAppSeeder extends Seeder {
 			'industry'        => 'Industry Y'
 		));
 
+
+
 		$companyOne->categories()->attach($categoryOne->id);
 		$companyOne->categories()->attach($categoryTwo->id);
 
-		$categoryTwo->categories()->attach($categoryOne->id);
-		$categoryTwo->categories()->attach($categoryTwo->id);
+		$companyTwo->categories()->attach($categoryOne->id);
+		$companyTwo->categories()->attach($categoryTwo->id);
 
 		$companyThree->categories()->attach($categoryOne->id);
 		$companyThree->categories()->attach($categoryTwo->id);

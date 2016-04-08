@@ -22,6 +22,6 @@ Route::controllers([
 
 Route::get('eloquent', function() {
 //	dd( View::make('eloquent')->with('companies', \App\Company::all(), 'products',\App\Product::all() ));
-	dd(View::make('eloquent')->with('companies', \App\Company::all())->with('products', \App\Product::all()));
+	return View::make('eloquent')->with('companies', \App\Company::all())->with('products', 'categories');
 //	return (View::make('eloquent')->with('companies', \App\Company::with('categories', \App\Product::all())));
 });
